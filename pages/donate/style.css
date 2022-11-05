@@ -41,8 +41,26 @@ a {
     backdrop-filter: blur(2px);
 
 }
+.header__wrapper{
+position: relative;
+}
 .header__title{
-    display: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.0145px;
+    line-height: 120%;
+    /* or 23px */
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+position: absolute;
+left: 4.75px;
+top: 3.55px;
+width: 72.49px;
+height: 44.91px;
 }
 .header__wrapper {
     display: flex;
@@ -83,12 +101,11 @@ color: #F9804B;
 }
 /* Watch begin  */
 .watch {
-    background-image: url("../../assets/images/Panda.png");
+    background-image: url("../../assets/images/panda_bg-donate.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 780px;
+    height: 387px;
     width: 100%;
-    margin-top: -80px;
 }
 .watch__wrapper {
     display: flex;
