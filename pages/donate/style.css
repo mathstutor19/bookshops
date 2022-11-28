@@ -128,6 +128,13 @@ a {
   display: block;
 }
 /* header reresponsive start */
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 @media screen and (max-width: 1000px) {
   .container {
     width: 100%;
@@ -140,6 +147,22 @@ a {
   }
   .figma__link {
     margin-right: 30px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .navigation__item {
+    padding-right: 40px;
+  }
+  .header__logo {
+    padding-right: 30px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .navigation__item {
+    padding-right: 30px;
+  }
+  .header__logo {
+    padding-right: 30px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -171,7 +194,7 @@ a {
     width: 18px;
     height: 10px;
     position: absolute;
-    top: 11px;
+    top: 9px;
     right: 0px;
   }
   .burger__wrapper p {
@@ -286,6 +309,7 @@ a {
   backdrop-filter: blur(2px);
   padding: 40px 92px 62px;
   border-radius: 20px;
+  overflow: hidden;
 }
 .donate .content .card__title {
   margin-left: -13px;
@@ -522,6 +546,13 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+@media (max-width: 1200px) {
+  .donate .content {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 @media screen and (max-width: 1000px) {
   .donate {
     margin-top: -4px;
@@ -617,19 +648,24 @@ input::-webkit-inner-spin-button {
     height: 100%;
   }
   .donate .content .card .text {
-    margin: 27px 0 20px 4px;
+    margin: 27px 0 20px 20px;
   }
   .donate .content .card .range {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 86vw;
+    width: 96%;
     height: 27px;
     background: #404950;
     border-radius: 2px;
+    margin-left: 19px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
   }
   .donate .content .card .range .progress-bar {
-    width: 915px;
+    width: 100%;
     height: 2px;
     background: #72828e;
   }
@@ -641,7 +677,7 @@ input::-webkit-inner-spin-button {
     font-size: 26px;
     line-height: 140%;
     color: #333b41;
-    margin-bottom: 49px;
+    margin-bottom: 55px;
   }
 
   .donate .content .card .price-form .active-price {
@@ -651,10 +687,11 @@ input::-webkit-inner-spin-button {
     display: inline-grid;
     position: relative;
     width: 66px;
-    margin-top: 13px;
+    margin-top: 6px;
+    margin-left: 18px;
     transition: 0.5s;
   }
-  .donate .content .card .price-form .price :nth-child(1) {
+  .donate .content .card .price-form .price-1 {
     display: none;
   }
   .donate .content .card .price-form label input {
@@ -663,8 +700,8 @@ input::-webkit-inner-spin-button {
     left: 25px;
   }
   .donate .content .card .price-form label input:checked.custom-radio {
-    top: -38px;
-    left: 20px;
+    top: -32px;
+    left: 9px;
     width: 22px;
     height: 22px;
     border: 1px solid #fe9013;
@@ -693,8 +730,8 @@ input::-webkit-inner-spin-button {
   }
   .donate .content .card .price-form label .checkmark {
     position: absolute;
-    top: -32px;
-    left: 26px;
+    top: -26px;
+    left: 15px;
     width: 10px;
     height: 10px;
     background: #ffee2e;
@@ -792,6 +829,19 @@ input::-webkit-inner-spin-button {
     text-align: center;
     margin-top: 57px;
     margin-left: 5px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .donate .content .card .price-form label {
+    display: inline-grid;
+    position: relative;
+    width: 66px;
+    margin-top: 8px;
+    transition: 0.5s;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 140%;
+    margin-left: 10px;
   }
 }
 @media (max-width: 640px) {
@@ -907,6 +957,7 @@ input::-webkit-inner-spin-button {
     height: 27px;
     background: #404950;
     border-radius: 2px;
+    margin-left: 0px;
   }
   .donate .content .card .range .progress-bar {
     width: 100%;
@@ -1091,6 +1142,59 @@ input::-webkit-inner-spin-button {
     line-height: 140%;
   }
 }
+@media (max-width: 400px) {
+  .donate .content .card .amount-animals {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+    margin-left: 0;
+  }
+  .donate .content .card .amount-animals .amount-block {
+    height: 80px;
+    width: 89px;
+    margin-left: 0px;
+    margin-top: 35px;
+  }
+  .donate .content .card .amount-animals .amount-block__amount {
+    font-weight: 500;
+    font-size: 40.6015px;
+    line-height: 80%;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 11px;
+  }
+  .donate .content .card .amount-animals .amount-block__title {
+    font-weight: 400;
+    font-size: 9.02255px;
+    line-height: 140%;
+    text-transform: none;
+    margin-top: 11px;
+    text-align: left;
+    width: 159px;
+    height: 22px;
+  }
+  .donate .content .card .amount-animals .multiply {
+    width: 41px;
+    height: 22px;
+    background-image: url(../../assets/icons/x_icon.svg);
+    background-repeat: no-repeat;
+    background-size: 8px 8px;
+    margin: 8px 62px 0 6px;
+  }
+  .donate .content .card .amount-animals .animals {
+    width: 160.15px;
+    height: 138.72px;
+    display: flex;
+    align-items: center;
+  }
+  .donate .content .card .amount-animals .animals img {
+    width: 152.15px;
+    height: 136.72px;
+    margin-left: -49px;
+  }
+}
 @media (max-width: 320px) {
   .donate {
     margin-top: -4px;
@@ -1253,10 +1357,10 @@ input::-webkit-inner-spin-button {
     left: 25px;
   }
   .donate .content .card .price-form label input:checked.custom-radio {
-    top: -38px;
-    left: 20px;
-    width: 22px;
-    height: 22px;
+    top: -18px;
+    left: 4px;
+    width: 13px;
+    height: 13px;
     border: 1px solid #fe9013;
   }
   .donate
@@ -1268,10 +1372,10 @@ input::-webkit-inner-spin-button {
     ~ .checkmark:after {
     content: "";
     position: absolute;
-    top: -15px;
-    left: -15px;
-    width: 38px;
-    height: 38px;
+    top: -9px;
+    left: -9px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: none;
     border: 1px solid #fe9013;
@@ -1283,8 +1387,8 @@ input::-webkit-inner-spin-button {
   }
   .donate .content .card .price-form label .checkmark {
     position: absolute;
-    top: -23px;
-    left: 26px;
+    top: -14px;
+    left: 8px;
     width: 5px;
     height: 5px;
     background: #ffee2e;
@@ -1557,7 +1661,7 @@ input::-webkit-inner-spin-button {
   .footer__nav {
     display: flex;
     align-items: flex-end;
-    margin-left: -7px;
+    margin-left: 4px;
   }
   .footer__navigation__item {
     margin-right: 48px;
@@ -1625,7 +1729,22 @@ input::-webkit-inner-spin-button {
     color: #eaf7fe;
   }
 }
+@media screen and (max-width: 900px) {
+  .footer__author {
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 175%;
+    color: #ffffff;
+    position: absolute;
 
+    top: 280px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .footer__nav {
+    margin-left: -100px;
+  }
+}
 @media screen and (max-width: 640px) {
   .footer__wrapper {
     position: relative;
@@ -1656,7 +1775,7 @@ input::-webkit-inner-spin-button {
   .footer__nav {
     position: absolute;
     bottom: 8px;
-    left: 28px;
+    left: 120px;
 
     /* width: 100px;
     height: 100px; */
@@ -1666,7 +1785,7 @@ input::-webkit-inner-spin-button {
   }
 
   .navigation__item {
-    margin-right: -11px;
+    margin-right: 7px;
     margin-top: -29px;
   }
   .footer__right {
@@ -1692,7 +1811,28 @@ input::-webkit-inner-spin-button {
     margin: 35px 0px 120px;
   }
 }
+@media screen and (max-width: 600px) {
+  .footer__author {
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 175%;
+    color: #ffffff;
+    position: absolute;
+    top: 180px;
+    width: 260px;
+    right: -37px;
 
+    /* margin-top: 600px; */
+  }
+}
+@media screen and (max-width: 360px) {
+  .navigation__item {
+    padding-right: 20px;
+  }
+  .footer__button {
+    width: 250px;
+  }
+}
 @media screen and (max-width: 320px) {
   .footer__wrapper {
     position: relative;
@@ -1724,7 +1864,7 @@ input::-webkit-inner-spin-button {
   .social-list {
     position: absolute;
     top: 45px;
-    right: 7px;
+    right: 27px;
     display: flex;
     margin: auto;
   }
@@ -1740,7 +1880,7 @@ input::-webkit-inner-spin-button {
   .footer__nav {
     position: absolute;
     bottom: 5px;
-    left: 28px;
+    left: 120px;
 
     /* width: 100px;
     height: 100px; */
@@ -1750,7 +1890,7 @@ input::-webkit-inner-spin-button {
   }
 
   .navigation__item {
-    margin-right: -21px;
+    margin-right: 7px;
     margin-top: -35px;
   }
   .footer__right {
@@ -1777,5 +1917,6 @@ input::-webkit-inner-spin-button {
   }
   .footer__button {
     margin: 84px -11px 120px;
+    width: 300px;
   }
 }
