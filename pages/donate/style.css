@@ -170,6 +170,10 @@ a {
     height: 34px;
     padding-left: 20px;
     padding-right: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
   }
   .container {
     width: 100%;
@@ -260,6 +264,7 @@ a {
   .watch {
     background-image: url("../../assets/images/panda_bg--600px.png");
     height: 340px;
+    margin-top: 34px;
   }
 }
 @media (max-width: 320px) {
