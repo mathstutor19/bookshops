@@ -654,6 +654,11 @@ a {
   overflow: hidden;
   height: 880px;
 }
+@media (max-width: 1000px) {
+  .animals__slider {
+    height: 800px;
+  }
+}
 @media (max-width: 640px) {
   .animals__slider {
     height: 756px;
