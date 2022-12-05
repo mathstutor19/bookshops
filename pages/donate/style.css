@@ -245,6 +245,58 @@ a {
     border-radius: 2px;
   }
 }
+
+/* Responsive navbarstart  */
+.table__navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1000;
+  padding: 10px;
+  display: none;
+}
+.table__logo__wrapper {
+  border: 0.8px solid #fe9013;
+  border-radius: 2px;
+  width: 65.6px;
+  height: 41.6px;
+  display: block;
+  padding: 3px;
+  margin-bottom: 30px;
+}
+.table__navigation__item {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333b41;
+  margin-top: 15px;
+}
+.table__navigation__item_link {
+  color: #333b41;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.table__navigation__item_link:hover {
+  color: #fe9013;
+}
+.table__close__button {
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.table__close__image {
+  width: 20px;
+  height: 20px;
+  background-color: #e47209;
+}
 /* Watch begin  */
 .watch {
   background-image: url("../../assets/images/donate-panda_bg.png");
