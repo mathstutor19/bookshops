@@ -643,52 +643,123 @@ animalsCardsThree.innerHTML = htmlCodeThree;
 //   //   dots[slideIndex - 1].className += " active";
 // }
 
-let activeSlide = 0;
-const slides = document.querySelectorAll(".animals__wrapper");
+// let activeSlide = 0;
+// const slides = document.querySelectorAll(".animals__wrapper");
 
-let left = document.querySelector(".arrow-left");
+// let left = document.querySelector(".arrow-left");
 
-left.onclick = function () {
-  updatePrevSlide();
-};
+// left.onclick = function () {
+//   updatePrevSlide();
+// };
 
-let right = document.querySelector(".arrow-right");
+// let right = document.querySelector(".arrow-right");
 
-right.onclick = function () {
-  updateNextSlide();
-};
+// right.onclick = function () {
+//   updateNextSlide();
+// };
 
-function updateNextSlide() {
-  slides[activeSlide].classList.add("prev");
-  let nextSlide = activeSlide < slides.length - 1 ? activeSlide + 1 : 0;
-  slides[nextSlide].classList.remove("prev");
-  slides[nextSlide].classList.remove("next");
-  slides[nextSlide].classList.add("active");
+// function updateNextSlide() {
+//   slides[activeSlide].classList.add("prev");
+//   let nextSlide = activeSlide < slides.length - 1 ? activeSlide + 1 : 0;
+//   slides[nextSlide].classList.remove("prev");
+//   slides[nextSlide].classList.remove("next");
+//   slides[nextSlide].classList.add("active");
 
-  if (nextSlide < slides.length - 1) {
-    slides[nextSlide + 1].classList.add("next");
-    slides[nextSlide + 1].classList.remove("prev");
-  } else {
-    slides[0].classList.remove("prev");
-    slides[0].classList.add("next");
-  }
-  activeSlide = nextSlide;
+//   if (nextSlide < slides.length - 1) {
+//     slides[nextSlide + 1].classList.add("next");
+//     slides[nextSlide + 1].classList.remove("prev");
+//   } else {
+//     slides[0].classList.remove("prev");
+//     slides[0].classList.add("next");
+//   }
+//   activeSlide = nextSlide;
+// }
+
+// function updatePrevSlide() {
+//   slides[activeSlide].classList.add("next");
+//   let prevSlide = activeSlide > 0 ? activeSlide - 1 : slides.length - 1;
+//   slides[prevSlide].classList.remove("next");
+//   slides[prevSlide].classList.remove("prev");
+//   slides[prevSlide].classList.add("active");
+
+//   if (prevSlide > 0) {
+//     slides[prevSlide - 1].classList.add("prev");
+//     slides[prevSlide - 1].classList.remove("next");
+//   } else {
+//     slides[slides.length - 1].classList.remove("next");
+//     slides[slides.length - 1].classList.add("prev");
+//   }
+
+//   activeSlide = prevSlide;
+// }
+
+// slider start
+var items = document.querySelectorAll(".animals__wrapper");
+var currentItem = 0;
+var isEnabled = true;
+
+function changeCurrentItem(n) {
+  currentItem = (n + items.length) % items.length;
 }
 
-function updatePrevSlide() {
-  slides[activeSlide].classList.add("next");
-  let prevSlide = activeSlide > 0 ? activeSlide - 1 : slides.length - 1;
-  slides[prevSlide].classList.remove("next");
-  slides[prevSlide].classList.remove("prev");
-  slides[prevSlide].classList.add("active");
-
-  if (prevSlide > 0) {
-    slides[prevSlide - 1].classList.add("prev");
-    slides[prevSlide - 1].classList.remove("next");
-  } else {
-    slides[slides.length - 1].classList.remove("next");
-    slides[slides.length - 1].classList.add("prev");
-  }
-
-  activeSlide = prevSlide;
+function nextItem(n) {
+  hideItem("to-left");
+  changeCurrentItem(n + 1);
+  showItem("from-right");
 }
+
+function previousItem(n) {
+  hideItem("to-right");
+  changeCurrentItem(n - 1);
+  showItem("from-left");
+}
+
+function goToItem(n) {
+  if (n < currentItem) {
+    hideItem("to-right");
+    currentItem = n;
+    showItem("from-left");
+  } else {
+    hideItem("to-left");
+    currentItem = n;
+    showItem("from-right");
+  }
+}
+
+function hideItem(direction) {
+  isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener("animationend", function () {
+    this.classList.remove("active", direction);
+  });
+}
+
+function showItem(direction) {
+  items[currentItem].classList.add("next", direction);
+  items[currentItem].addEventListener("animationend", function () {
+    this.classList.remove("next", direction);
+    this.classList.add("active");
+    isEnabled = true;
+  });
+}
+
+document.querySelector(".arrow-left").addEventListener("click", function () {
+  if (isEnabled) {
+    previousItem(currentItem);
+  }
+});
+
+document.querySelector(".arrow-right").addEventListener("click", function () {
+  if (isEnabled) {
+    nextItem(currentItem);
+  }
+});
+
+// document
+//   .querySelector(".carousel-indicators")
+//   .addEventListener("click", function (e) {
+//     var target = [].slice.call(e.target.parentNode.children).indexOf(e.target);
+//     if (target !== currentItem && target < dots.length) {
+//       goToItem(target);
+//     }
+//   });
