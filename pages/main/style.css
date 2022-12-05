@@ -648,63 +648,21 @@ a {
 }
 /* slider start  */
 
-.carousel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  padding: 90px 0;
-  text-align: center;
-  background-color: #1e88e5;
-  transform: translate(-50%, -50%);
-}
-
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel-inner > .item {
-  position: relative;
-  display: none;
-  animation: 0.5s ease-in-out;
-  -webkit-animation: 0.5s ease-in-out;
-}
-
-.carousel-inner > .active,
-.carousel-inner > .next {
-  display: flex;
-}
-
-.carousel-inner > .next {
-  position: absolute;
-  top: 0;
-  width: 1000px;
-}
-
-.carousel-inner > .to-left {
-  animation-name: left;
-}
-
-.carousel-inner > .from-right {
-  animation-name: right;
-}
-
-.carousel-inner > .to-right {
-  animation-name: right;
-  animation-direction: reverse;
-}
-
-.carousel-inner > .from-left {
-  animation-name: left;
-  animation-direction: reverse;
-}
-
 .animals__slider {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 880px;
+}
+@media (max-width: 640px) {
+  .animals__slider {
+    height: 756px;
+  }
+}
+@media (max-width: 640px) {
+  .animals__slider {
+    height: 1400px;
+  }
 }
 .animals__slider > .animals__wrapper {
   position: relative;
@@ -1918,7 +1876,7 @@ input[type="range"].styled-slider.slider-progress::-ms-fill-lower {
 /* popup .testimonials  */
 .popup__full {
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   background-color: rgba(0, 0, 0, 0.25);
   position: absolute;
   top: 0;
